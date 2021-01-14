@@ -13,7 +13,14 @@ list_all_files = lib.getListOfFiles(dirName)
 
 big_dataset = lib.load_all_data(list_all_files)
 
-print(big_dataset)
+# print(big_dataset)
+
+# lib.trace_signal(big_dataset, 1, 1, 1, 1)
+
+origin = [[0, 0, 0], [0, 0, 0]]
+
+sensor_data = list(lib.extract_sensor_data(big_dataset, 1))
+lib.compute_trajectory(sensor_data, origin)
 
 
 if __name__ == "__main__":
